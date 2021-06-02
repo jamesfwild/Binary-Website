@@ -1,0 +1,64 @@
+{% extends "navigation.html" %} <!--Extends navigation bar so can displayed-->
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Choose Quiz </title>
+</head>
+<body>
+<script>
+    //code used to prevent users from using the back button so they cannot back out from the quiz
+    function preventBack() {
+        window.history.forward(); 
+    }
+    setTimeout("preventBack()", 0);
+    window.onunload=function() {null};
+</script>
+
+<div class="welcomeCover"> <!--Uses welcomeCover class from css-->
+    <h1 float="center">Please choose one of the following</h1>
+    <h3>Instructions:</h3>
+    <h4>If the question requires a binary answer please use 8 bits unless doing binary shifts.</h4>
+    <h4>When entering an answer please do not enter spaces or other characters.</h4>
+    <h4>Beware there is a 30 seconds timer so be quick!</h4>
+    <form action="/quiz" method="POST">  <!--Pushes the user to the quiz page once a button has been clicked-->
+        <div class="column">
+                <button class="QBtn" name="QuizChoice" value="BAD"> <!--creates a button with value used to determine questions in quiz-->
+                    <a>Binary and Denary</a>
+                </button>
+        </div>
+
+        <div class="column">
+                <button class="QBtn" name="QuizChoice" value="BAH"> <!--creates a button with value used to determine questions in quiz-->
+                    <a>Binary and Hex</a>
+                </button>
+        </div>
+
+        <div class="column">
+                <button class="QBtn" name="QuizChoice" value="HAD"> <!--creates a button with value used to determine questions in quiz-->
+                    <a>Hex and Denary</a>
+                </button>
+        </div>
+
+        <div class="column">
+                <button class="QBtn" name="QuizChoice" value="ADD"> <!--creates a button with value used to determine questions in quiz-->
+                    <a>Binary Addition</a>
+                </button>
+        </div>
+
+        <div class="column">
+                <button class="QBtn" name="QuizChoice" value="BSH"> <!--creates a button with value used to determine questions in quiz-->
+                    <a>Binary Shifts</a>
+                </button>
+        </div>
+
+        <div class="column">
+                <button class="QBtn" name="QuizChoice" value="ALL"> <!--creates a button with value used to determine questions in quiz-->
+                    <a>All Topics</a>
+                </button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+{% endblock %}

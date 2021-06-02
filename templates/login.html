@@ -1,0 +1,32 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='website.css')}}"> <!--calls the stylesheet-->
+  <title> Login </title>
+</head>
+
+<body>
+<!--creates an empty navbar-->
+<div class="navbar">
+  <ul class="navbar">
+    <li class="navbar"></li>
+  </ul>
+</div>
+
+<div class="forms"> <!--makes use of form class from stylesheet-->
+  <form action="/logResult" method="POST"> <!--when the user submit their inputs they will be taken to the logResult page-->
+    <label for="LogUser">Username</label> 
+    <input type="text" id="LogUser" name="LogUser" placeholder="Username" value="{{LogUser}}"> <!--defines what type of variable will be inputted along with the id,name, placeholder and value-->
+
+    <label for="LogPass">Password</label>
+    <input type="password" id="LogPass" name="LogPass" placeholder="Password" value="{{LogPass}}">
+    {{error_statement}} <!--outputs the error statement-->
+    <input type="submit" value="Submit"> <!--creates a submit button-->
+  </form>
+  <p>Don't have an account? <a href="/register">Register here</a></p> <!--creates a link for the users to follow so they can register if they don't have an account-->
+</div>
+</body>
+</html>
+{% endblock %}
+

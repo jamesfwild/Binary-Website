@@ -1,0 +1,51 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='website.css')}}"> <!--calls the stylesheet-->
+  <title> Welcome </title>
+</head>
+<body>
+<div class="navbar"> <!--makes use of the navbar class in the stylesheet-->
+  <div class="navbar-right"> <!--makes use of the navbar-right class in the stylesheet-->
+    <a href="/login">Login</a> <!--Links the login url path to a button-->
+  </div>
+</div>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script> <!--pulls a website which I use to output icons-->
+
+<div class="welcomeCover">
+  <h1>About</h1>  
+  <div class="left"> <!--makes use of the left class from the stylesheet-->
+    <h2>Learn!</h2>
+    <p>In this section you can learn about how to answer questions covering all of the major topics including converting between denary, binary and hex as well as binary addition and binary shifts! 
+      This will allow you to become more comfortable with the thinking behind how to approach a question meaning these questions will be
+      more accessible to you in your exams.
+    </p> 
+    <div class="spacing"> <!--makes use of the spacing class from the stylesheet-->
+      <i class="fas fa-question" style="font-size:200px;color:lightblue;"></i> <!--calls an icon from the website that was pulled and styles it with size and colour-->
+    </div>
+    <div class="spacing">
+      <h2>Compete!</h2>
+      <p>Here you can compete with fellow classmates to achieve the top spot in your leaderboards. In this you will be ranked by the amount of questions you
+        have answered correctly, so you will benefit from having a good understanding of these topics as well as frequent use of the website.
+    </div>
+  </div>
+
+  <div class="right">
+    <i class="fas fa-graduation-cap" style="font-size:200px;color:lightblue;"></i> <!--calls an icon from the website that was pulled-->
+    <div class="spacing">
+        <h2 >Quiz!</h2>
+        <p>In this section you can test your knowledge of what you have covered in the learning area. This can help to reinforce your 
+        knowledge and identify your mistakes! This should allow you to become more aware of how exam questions may be presented and how
+        to deal with the time pressures you may be under.
+        </p>
+    </div>
+    <div class="spacing">
+      <i class="fas fa-trophy" style="font-size:200px;color:lightblue;"></i> <!--calls an icon from the website that was pulled-->
+    </div>
+  </div>
+</div>
+</body>
+</html>
+{% endblock %}

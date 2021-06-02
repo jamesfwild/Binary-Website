@@ -1,0 +1,462 @@
+* {
+  box-sizing: border-box; /*specifies the behaviour of width and height properties*/
+}
+  
+/*applies to all code in body*/
+body {
+  margin: 0; /*defines margin*/
+  font-family: "Trebuchet MS", Helvetica, sans-serif; /*defines font*/
+  background-color: #3ed9de;
+}
+
+/*designs navbar*/
+.navbar {
+background-color: #343A40; /*defines colour*/
+font-family: Arial, Helvetica, sans-serif; /*defines font*/
+overflow: hidden; /*when it overflows then hide the content*/
+}
+
+/*designs any tabs that will be created*/
+.navbar a {
+color: white; /*defines colour of font*/
+font-size: 16px; /*defines font size*/
+text-align: center; /*defines positioning of text*/
+text-decoration: none;
+padding: 14px 16px; /*defines any padding in the tabs*/
+float: left; /*pushes all tabs to the left*/
+}
+
+/*for login tab in welcome page*/
+.navbar-right {
+float: right; /*psuhes tabs to the right*/
+}
+
+/*design for dropdown tab*/
+.dropdown {
+float: left;
+overflow: hidden;
+}
+
+/*design for tabs in dropdown*/
+.dropdown .dropbtn {
+color: white;
+background-color: inherit;
+font-size: 16px; 
+font-family: inherit;
+cursor: pointer; /*defines how to select the tab*/ 
+padding: 14px 16px;
+border: none;
+outline: none;
+margin: 0;
+}
+
+/*design for navbar tabs when hovered over*/
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+background-color: white;
+color: #343A40;
+}
+
+/*design for the dropdown tabs*/
+.dropdown-content {
+background-color: #f9f9f9;
+display: none;
+position: absolute;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /*creates shadow */
+z-index: 1;
+}
+
+/*design for the text within dropdown tab*/
+.dropdown-content a {
+color: black;
+text-decoration: none;
+padding: 12px 16px;
+display: block;
+text-align: left;
+float: none;
+}
+
+/*design for dropdown tabs when hovered over*/
+.dropdown-content a:hover {
+background-color: #ddd;
+}
+
+/*design for image on welcome page*/
+img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+/*design for text on welcome page*/
+.banner{
+  width: 80%;
+  height: 70%;
+  top: 25%;
+  left: 45px;
+  position:absolute;
+  color:#fff;
+}
+
+/*design for text of description on welcome page*/
+.app-text{
+  width: 50%;
+  float: left;
+}
+
+/*design for text of heading on welcome page*/
+.app-text h1{
+  font-size: 43px;
+  width: 640px;
+  position: relative;
+  margin-left: 0px;
+}
+
+/*design for text of description on welcome page*/
+.app-text p{
+  font-size: 15px;
+  width: 650px;
+  margin-left: 30px 0 30px 40px;
+  line-height: 20px;
+  color: #919191
+}
+
+/*allows the dropdown to be displayed*/
+.show {
+  display: block;
+}
+
+
+/*design the block in the welcome page*/
+.welcomeCover {
+  background: #ffffff;
+  text-align: center;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  border-radius: 15px 15px 15px 15px;
+  padding: 20px;
+  width: 95%;
+  overflow: hidden;
+}
+
+/*desings the column for content within the block on welcome page*/
+.blockColumn {
+  width:100%;
+  padding: 1%;
+  float: center;
+}
+
+/*design the block in the welcome page*/
+.block {
+  background: rgb(62,217,222,0.35);
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  margin-top: 2.5%;
+  border-radius: 15px 50px;
+  padding: 20px;
+  width: 95%;
+}
+
+/*design for content on the left of the welcome page*/
+.left {
+float: left;
+text-align: center;
+width: 35%;
+margin-right: 5%;
+margin-left: 10%;
+margin-top: 2.5%;
+padding-bottom: 5%;
+}
+
+/*design for content on the right of the welcome page*/
+.right {
+float: right;
+text-align: center;
+width: 35%;
+margin-right: 10%;
+margin-left: 5%;
+margin-top: 2.5%;
+padding-bottom: 5%;
+}
+
+/*creates gaps between content on the welcome page*/
+.spacing {
+margin-top: 15%;
+margin-bottom: 15%;
+}
+
+/*design for form boxes that require an input of text or email*/
+input[type=text],input[type=password], input[type=email]  {
+border: 1px solid #ccc;
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border-radius: 4px;
+box-sizing: border-box;
+} 
+
+/*design for submit button on login and register pages*/
+input[type=submit] {
+background-color: #4CAF50;
+color: white;
+cursor: pointer;
+float:center;
+width: 100%;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+border-radius: 4px;
+}
+
+/*design for submit button when hovered over*/
+input[type=submit]:hover {
+background-color: #45a049;
+}
+
+/*design for forms used in login and register*/
+.forms {
+background-color: #f2f2f2;
+border-radius: 20px;
+padding: 5%;
+margin-top: 5%;
+margin-left: 25%;
+margin-right: 25%;
+width: 50%
+}
+
+/*design for tables */
+#webTable {
+  text-align: center;
+  border-collapse: collapse;
+  width: 80%;
+  margin-left:10%; 
+  margin-right:10%;
+}
+/*design for tables */
+#webTable td, #webTable th {
+  border: 1px solid black;
+  padding: 8px;
+  width:10%;
+}
+
+/*design for when you hover over a table */
+#webTable tr:hover {background-color: #cfcfcf;}
+
+/*design for table headings */
+#webTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color:#ffa408;
+  color: white;
+}
+
+/*design for table contents*/
+#webTable tr{
+  background-color: white;
+}
+
+/*creates space after displaying videos to separate topics */
+.vidSpacing{
+  margin-bottom: 5%;
+}
+
+/*design for margins to create space between text */
+.margins{
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/*design for ordered lists */
+ol {
+  text-align: center;
+  list-style-position: inside;
+}
+
+/*design for buttons*/
+.QBtn {
+  width: 20vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  margin: 4vw;
+  background-color: #ff9d00;
+  height: 15vw;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-size: 2vw;
+  text-align: center;
+}
+
+/*splits page into 3*/
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+}
+
+/*designs the question to be asked in the quiz*/
+.question{
+  margin: 60px;
+  text-align: center;
+}
+
+/*designs the answer box for short answer questions*/
+.answerBox {
+  border-radius: 20px;
+  padding: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%
+}
+
+/* designs buttons for multiple choice questions */
+.answerButton {
+  background-color: white;
+  color: black;
+  border: 2px solid #e70087;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2vw;
+  padding: 2vw;
+  margin: 2vw;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 40vw;
+}
+
+/* changes multiple choice button on hover */
+.answerButton:hover {
+  background-color: #e70087;
+  color: white;
+}
+
+/* designs layout for multiple choice questions */
+.columnAns {
+  width: 100%;
+  padding: 10px;
+}
+
+/* box for when user gets a question correct */
+.correct{
+  background-color: #4CAF50;
+  color: white;
+  font-size: 2vw;
+  float:center;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  border: none;
+  border-radius: 8px;
+}
+
+/* box for when user gets a question incorrect */
+.incorrect{
+  color: white;
+  font-size: 2vw;
+  float:center;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff2b2b;
+}
+
+/* designs next button so user can move on to the next question */
+.nextButton {
+  background-color: white;
+  color: black;
+  border: 2px solid #0499df;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2vw;
+  padding: 1vw;
+  margin: 2vw;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 15vw;
+}
+
+/*changes colour of button on hover */
+.nextButton:hover {
+  background-color: #0499df;
+  color: white;
+}
+
+/* design for progress bar used for timer */
+.progressBar{
+  width: 80%;
+  margin: 2%;
+  border: 2px solid black;
+}
+
+/* used to hide submit button for multiple choice questions which is clicked when timer runs out */
+.hide{
+  display: none;
+}
+
+/*splits page into 4*/
+.homeSplit {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/*design for tables */
+#leaderTable {
+  text-align: center;
+  border-collapse: collapse;
+  width: 60%;
+  margin-left:20%; 
+  margin-right:20%;
+  margin-bottom: 5%;
+}
+/*design for tables */
+#leaderTable td, #leaderTable th {
+  border: 1px solid #bfbfbf;
+  padding: 2%;
+  width:10%;
+}
+
+/*design for when you hover over a table */
+#leaderTable tr:hover {background-color: #cfcfcf;}
+
+/*design for table headings */
+#leaderTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: white;
+  background-color: #ed7d31;
+}
+
+/*alters the colour of the row in a table based on if its odd or even*/
+#leaderTable tr:nth-child(even){background-color:#fce4d6;}
+#leaderTable tr:nth-child(odd){background-color:#f8cbad;}
+
+/*design for table contents*/
+#leaderTable td{
+  color: black;
+}
+
+/*designs layout for each medal*/
+.medal1{
+  float: left;
+  width: 30%;
+  margin: 1%;
+}
+
+/*designs layout for the whole groups of medals*/
+.medalGroup{
+  margin-left: 35%;
+  margin-right: 30%;
+  margin-bottom: 15 %;
+}

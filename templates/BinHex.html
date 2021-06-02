@@ -1,0 +1,128 @@
+{% extends "navigation.html" %} <!--Pulls navigation bar so can be displayed-->
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Learn </title>
+</head>
+<body>
+<div class="welcomeCover"> <!--Uses welcomeCover class from css-->
+    <h1 id="TOPBH">Converting Between Binary and Hexadecimal</h1> <!--Creates header with ID so can be referenced in link-->
+    <p><a href="#HTB">Click here</a> if you want to learn about converting Hexadecimal to Binary.</p> <!--Sends users down the page to next topic-->
+    <h2>Converting Binary to Hexadecimal</h2>
+    <p>Before using this page ensure that you are comfortable with converting binary values to denary.</p>
+    <p>Here you will learn how to convert binary to hexadecimal through a step by step guide using an example.</p>
+    <h3>Question: Convert 11010110 into Hexadecimal.</h3> <!--Creates question to guide users through the process-->
+    <!--Step by step guide on how to answer question-->
+    <h4>Step 1 - Split the binary number into groups of 4 and write first 4 place values above them</h4>
+    <table id="webTable"> <!--Creates table and uses webTable class from css-->
+        <tr>
+         <th>8</th><th>4</th><th>2</th><th>1</th> <!--Table headers-->
+        </tr>
+        <tr>
+            <td>1</td><td>1</td><td>0</td><td>1</td> <!--Table contents-->
+        </tr>
+    </table> <!--Closes table-->
+    <br>
+    <table id="webTable">
+        <tr>
+         <th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+            <td>0</td><td>1</td><td>1</td><td>0</td>
+        </tr>
+    </table>
+    <h4>Step 2 - Convert these binary values into denary.</h4>
+    <table id="webTable">
+        <tr>
+         <th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+        <tr>
+         <td>8+</td><td>4+</td><td>0+</td><td>1</td>
+        </tr>
+    </table>
+    <p>So this section adds up to 13.</p> <!--Explaining how the steps apply to the questions-->
+    <table id="webTable">
+        <tr>
+         <th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>0</td><td>1</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+         <td>0+</td><td>4+</td><td>2+</td><td>0</td>
+        </tr>
+    </table>
+    <p>So this section adds up to 6</p>
+    <h4>Step 3 - Now we have to convert this to hexadecimal.</h4>
+    <p>So we have to check whether any of our values are 10 or above.</p>
+    <p>If so these will have to be converted using the table below.</p>
+    <table id="webTable">
+        <tr>
+         <th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th>
+        </tr>
+        <tr>
+         <td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td>
+        </tr>
+    </table>
+    <p>This means we will have to convert the 13 to D.</p>
+    <p>Now to get our answer we have to combine these values, so we get D6.</p>
+    <h3>Answer: D6</h3> <!--Displays answer for users-->
+    <p>If this was not clear please revisit how to convert binary to denary.</p>
+    <p>Hopefully, this video will help you to gain a better understanding of this.</p>
+    <!--Creates link for a YouTube channel-->
+    <p><i>Credit to <a href="https://www.youtube.com/channel/UCip6WVVodn3tFp9X-vxJV6Q" target="_blank">Tom Benyon</a></i></p>
+    <!--Displays video to reinforce their revision-->
+    <iframe class="vidSpacing" width="560" height="315" src="https://www.youtube.com/embed/G5Rpxhtmo3I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <h2 id="HTB">Converting Hexadecimal to Binary</h2> <!--ID so it can be referenced in a link-->
+    <p>Before learning about this ensure you are comfortable with converting denary to binary.</p>
+    <h3>Question: Convert 7F into binary.</h3> <!--Question to explain process-->
+    <!--Steo by step guide-->
+    <h4>Step 1 - Convert any letters into numbers.</h4>
+    <p>To do this we can look at the table below.</p>
+    <table id="webTable"> <!--Creates table-->
+        <tr>
+         <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th> <!--Table headers-->
+        </tr>
+        <tr>
+         <td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td> <!--Table contents-->
+        </tr>
+    </table>
+    <p>So this means that our F will be converted to 15. So we now have 7 15.</p>
+    <h4>Step 2 - Split the hex into 2 and write out the first 4 place values for each.</h4>
+    <h4>Step 3 - Convert each of these values individually into binary.</h4>
+    <p>Converting 7 into binary</p>
+    <table id="webTable">
+        <tr>
+         <th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+            <td>0</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+    </table>
+    <p>Converting 15 into binary</p>
+    <table id="webTable">
+        <tr>
+         <th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+            <td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+    </table>
+    <h4>Step 4 - Combine these values to get an 8 bit binary string</h4>
+    <h3>Answer: 01111111</h3> <!--Displays answer for users-->
+    <p>If this was not clear please revisit how to convert denary to binary</p>
+    <p>Watch this video to get a better understanding of this process.</p>
+    <!--Displays link to the YouTube channel-->
+    <p><i>Credit to <a href="https://www.youtube.com/channel/UCip6WVVodn3tFp9X-vxJV6Q" target="_blank">Tom Benyon</a></i></p>
+    <!--Displays YouTube video-->
+    <iframe class="vidSpacing" width="560" height="315" src="https://www.youtube.com/embed/Z2pvB1L3IOI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p><a href="#TOPBH">Back to top</a></p> <!--Link sends user to top of screen using the ID-->
+</div>
+</body>
+</html>
+{% endblock %}

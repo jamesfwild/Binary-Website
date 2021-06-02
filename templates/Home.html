@@ -1,0 +1,92 @@
+{% extends "navigation.html" %} <!--Extends the navigation bar so will be displayed on screen-->
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Home </title>
+</head>
+<body>
+<div class="welcomeCover"> <!--applies the welcomeCover class from the stylesheet-->
+    <h1>My Stats</h1> 
+    <div class="homeSplit"> <!--applies the homeSplit class from the stylesheet-->
+        <h4>Times logged on:</h4>
+        <h2>{{logons}}</h2> <!--displays the amount of logons the user has based on the value passed through-->
+    </div>
+    <div class="homeSplit">
+        <h4>Questions Answered Correctly:</h4>
+        <h2>{{QuestionsCorrect}}</h2> <!--displays the amount of questions the user has got correct based on the value passed through-->
+    </div>
+    <div class="homeSplit">
+        <h4>Questions Answered:</h4>
+        <h2>{{QuestionsAnswered}}</h2>
+    </div>
+    <div class="homeSplit">
+        <h4>Success rate:</h4>
+        <h2>{{CorrectPer}}%</h2>
+    </div>
+    <h1>Leaderboard</h1>
+    <table id="leaderTable"> <!--creates a table to display the leaderboard-->
+        <tr>
+            <th>RANK</th><th>NAME</th><th>TOTAL SCORE</th> <!--displays the headings for the leaderboard-->
+        </tr>
+        <tr>
+            <td>1</td><td>{{name1}}</td><td>{{score1}}</td> <!--displays the name and score variables passed through-->
+        </tr>
+        <tr>
+            <td>2</td><td>{{name2}}</td><td>{{score2}}</td>
+        </tr>
+        <tr>
+            <td>3</td><td>{{name3}}</td><td>{{score3}}</td>
+        </tr>
+        <tr>
+            <td>4</td><td>{{name4}}</td><td>{{score4}}</td>
+        </tr>
+        <tr>
+            <td>5</td><td>{{name5}}</td><td>{{score5}}</td>
+        </tr>
+    </table>
+
+    <h1>Achievements</h1>
+    <div class="medalGroup">
+        <div class="medal1">
+            <img src="{{url_for('static', filename=achieve1) }}" /> <!--displays the logon achievement trophy from my static file-->
+        </div>                                                      <!--which uses a variable that corresponds to the correct trophy-->
+        <div class="medal1">
+            <img src="{{url_for('static', filename=achieve2) }}" /> <!--displays the correctly answered achievement trophy from my static file-->
+        </div>                                                      <!--which uses a variable that corresponds to the correct trophy-->
+        <div class="medal1">
+            <img src="{{url_for('static', filename=achieve3) }}" /> <!--displays the questions answered achievement trophy from my static file-->
+        </div>                                                      <!--which uses a variable that corresponds to the correct trophy-->
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <p><b>Next steps:</b></p>
+    {% if nextstepLog=="Complete" %} <!--sees whether the user has any logon achievements left-->
+    <p></p> <!--if not then print nothing-->
+    {% else %}
+    <p>To get the next achievement you need to logon {{nextstepLog}}</p> <!--if so then display how many logons are required for the next achievement-->
+    {% endif %}
+
+    {% if nextstepCorrect=="Complete" %} <!--sees whether the user has any correctly answered achievements left-->
+    <p></p>
+    {% else %}
+    <p>To get the next achievement you need to answer {{nextstepCorrect}} questions correct</p> <!--if so then display how many correct answered are required for the next achievement-->
+    {% endif %}
+
+    {% if nextstepAnswered=="Complete" %} <!--sees whether the user has any questions answered achievements left-->
+    <p></p>
+    {% else %}
+    <p>To get the next achievement you need to answer {{nextstepAnswered}} questions</p> <!--if so then display how many questions answered are required for the next achievement-->
+    {% endif %}
+<br>
+</div>
+</body>
+</html>
+{% endblock %}

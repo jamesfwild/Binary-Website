@@ -1,0 +1,74 @@
+{% extends "navigation.html" %} <!--Extends the navigation bar so will be displayed on screen-->
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Learn </title>
+</head>
+<body>
+<div class="welcomeCover"> <!--Applies welcomeCover class from my css-->
+    <div class="margins"> <!--Applies margins class from css-->
+        <h1>Introduction</h1>
+        <!--Introduces Denary-->
+        <h2>Denary</h2>
+        <p>This is the number system we use in everyday life. This is also known as base 10, as there are 10 digits from 0 to 9.</p>
+        <!--Introduces Binary-->
+        <h2>Binary</h2>
+        <p>Binary is also known as in base 2, as it has 2 digits 0 or 1. This is how your place values are created, the first 8 shown below. 
+            We will be mostly working in 8 bit binary as this will be most commonly used within your exams.</p>
+        <table id="webTable"> <!--Creates table using webTable from css-->
+            <tr>
+                <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th> <!--Table headers-->
+            </tr>
+            <tr>
+                <!--Table contents using superscript-->
+                <td>2<sup>7</sup></td><td>2<sup>6</sup></td><td>2<sup>5</sup></td><td>2<sup>4</sup></td><td>2<sup>3</sup></td><td>2<sup>2</sup></td><td>2<sup>1</sup></td><td>2<sup>0</sup></td>
+            </tr>
+        </table>
+        <p>As we are working in 8-bit binary, the maximum denary number we can reach is 255. Otherwise, an error will occur.</p>
+        <p>Note that when working in binary rather than writing 00011001 you can instead write 11001. 
+            This is more beneficial to save time but do not get confused with their place values!</p>
+        <p>Most significant bit = the bit in a binary number of the highest value.</p>
+        <p>Least significant bit = the bit in a binary number of the lowest value.</p>
+        <div class="block">
+        <h3>Tip:</h3>
+        <p>When working in binary if you notice that the least significant bit is equal to 1 then the denary number must be odd!</p>
+        <p>If it is equal to 0 then it must be even.</p>
+        </div>
+        <br>
+        <!--Explains how binary is used to represent symbols-->
+        <h3>Character Sets</h3>
+        <p>When you press a key on a keyboard, a number is generated that represents the symbol for that key. 
+            This is called a character code. A complete collection of characters is a character set.</p>
+        <p>ASCII and Unicode are 2 of the main examples that you will need to be aware of.</p>
+        <h4>ASCII</h4>
+        <p>ASCII is made up of 7-bit binary codes, meaning it can hold 128 characters</p>
+        <p>Also, make sure you are aware of Extended ASCII, which works with 8-bit binary, meaning it can hold 256 characters.
+            This is useful when dealing with other European languages, which may make use of accents and use other symbols.</p>
+        <h4>Unicode</h4>
+        <p>Unicode uses between 8 to 32 bits per character, this means it can represent symbols from languages all across the world.
+            This is often used on the internet, so that users can communicate in many different languages.</p>
+
+        <!--Introduces Hex-->
+        <h2>Hexadecimal</h2>
+        <p>Hexadecimal is also known as base 16. The main purpose of hex is to simplify binary codes to make it more understandable for people.</p>
+        <p>Note that when working with hex the values can range from 0 to 15. However, when the value is 10 or over it is converted to a letter.
+            The table below represents this.
+        </p>
+        <table id="webTable"> <!--Creates table-->
+            <tr>
+             <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th> <!--Table headers-->
+            </tr>
+            <tr>
+             <td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td> <!--Table contents-->
+            </tr>
+        </table>
+        <p>This means that the smallest value you can represent is 00 and the largest is FF.</p>
+        <p>It is often used to represent colours in the form of #RRGGBB, where RR is reds, GG is greens and BB is blues.
+            The # just represent that it has been written in the hex format.
+        </p>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}

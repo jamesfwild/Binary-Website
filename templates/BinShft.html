@@ -1,0 +1,73 @@
+{% extends "navigation.html" %} <!--Extends navigation bar so can displayed-->
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Learn </title>
+</head>
+<body>
+<div class="welcomeCover"> <!--Uses welcomeCover class from css-->
+    <h1 id="TOPBS">Binary Shifts</h1> <!--Creates ID to be linked later-->
+    <h2>Left Shifts</h2>
+    <p>Left shifts occur when you multiply a binary number.</p>
+    <p>Note that when multiplying a binary number, if it is x2 shift it left by 1, if it is x4 shift it by 2, if it is x8 shift it by 3 and so on.</p>
+    <h3>Question: 1101 x 2</h3> <!--Displays question-->
+    <table id="webTable"> <!--Creates table using webTable from my cssS-->
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th> <!--Table headers-->
+        </tr>
+        <tr>
+         <td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>0</td><td>1</td> <!--Table contents-->
+        </tr>
+    </table> <!--Closes table-->
+    <p>Now shift this left by 1.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td></td><td></td><td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td>
+        </tr>
+    </table>
+    <p>Now we should convert both of these values to see if we got the expected result.</p> <!--Validating our result-->
+    <p>1101 = 13</p>
+    <p>11010 = 26</p>
+    <p>This proves that our shift was correct.</p>
+    <h3>Answer: 1101 x 2 = 11010</h3> <!--Displays answer-->
+
+    <h2>Right Shifts</h2>
+    <p>Right shifts occur when you are dividing a number.</p>
+    <p>Remember to note that when dividing a binary number, if it is /2 shift it right by 1, if it is /4 shift it by 2, if it is /8 shift it by 3 and so on.</p>
+    <h3>Question: 101100 / 4</h3> <!--Displays question-->
+    <table id="webTable"> <!--Creates table-->
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td></td><td></td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td>
+        </tr>
+    </table>
+    <p>Now shift this right 2 times.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>1</td><td>1</td>
+        </tr>
+    </table>
+    <p>Now double check this by converting these values to denary.</p>
+    <p>101100 = 44</p>
+    <p>1011 = 11</p>
+    <h3>Answer: 101100/4 = 1011</h3>
+
+    <p>Watch this video to get a better understanding of how to complete binary shifts.</p>
+    <!--Links to their YouTube channel-->
+    <p><i>Credit to <a href="https://www.youtube.com/channel/UC0HzEBLlJxlrwBAHJ5S9JQg" target="_blank">craigndave</a></i></p>
+    <!--Displays YouTube video-->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/_KoEz9K6t9I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p><a href="#TOPBS">Back to top</a></p> <!--Links back to top using ID created earlier-->
+</div>
+</body>
+</html>
+{% endblock %}

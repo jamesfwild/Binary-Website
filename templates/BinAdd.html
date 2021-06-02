@@ -1,0 +1,267 @@
+{% extends "navigation.html" %} <!--Pulls through navigation bar to be displayed on screen-->
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Learn </title>
+</head>
+<body>
+<div class="welcomeCover"> <!--Applies welcomeCover class taken from my css-->
+    <h1 id="TOPBA">Binary Addition</h1>
+    <p>Before starting there are 4 main rules you have to remember:</p>
+    <ol float="centre"> <!--Creates ordered list-->
+        <li>0 + 0 = 0</li> <!--Creates bullet point-->
+        <li>0 + 1 = 1</li>
+        <li>1 + 1 = 10  (binary for 2) meaning it equals 0 carry 1</li>
+        <li>1 + 1 + 1 = 11 (binary for 3) meaning it equals 1 carry 1</li>
+    </ol> <!--Closes list-->
+    <h3>Question 1: What is 01100101 + 10010110</h3> <!--Displays question-->
+    <!--Step by step guide-->
+    <h4>Step 1 - Set the question up in the form of long addition</h4>
+    <table id="webTable"> <!--Creates table-->
+        <tr>
+            <td></td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td> <!--Table contents-->
+        </tr>
+        <tr>
+            <td>+</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td>
+        </tr>
+    </table>
+    <h4>Step 2 - Starting from the right hand side add the 2 corresponding numbers.</h4>
+    <p>As it is 1 + 0, it will equal 1.</p> <!--Explains process-->
+    <table id="webTable">
+        <tr>
+            <td></td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+        <tr>
+            <td>+</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+            <td>=</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td>
+        </tr>
+    </table>
+    <h4>Step 3 - Repeat step 2 but move left once.</h4>
+    <p>As it is 0 + 1, it will equal 1 again.</p>
+    <table id="webTable">
+        <tr>
+            <td></td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+        <tr>
+            <td>+</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+            <td>=</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>1</td>
+        </tr>
+    </table>
+    <h4>Step 4 - Repeat this again and move left once more.</h4>
+    <p>As it is 1 + 1, it will equal 0 and carry the 1.</p>
+    <table id="webTable">
+        <tr>
+            <td></td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+        <tr>
+            <td>+</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+            <td>=</td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>1</td><td>1</td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td>1</td><td></td><td></td><td></td>
+        </tr>
+    </table>
+    <h4>Step 5 - Now do the same to the next column.</h4>
+    <p>As it is 0 + 0 + 1, it will equal 1.</p>
+    <table id="webTable">
+        <tr>
+            <td></td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+        <tr>
+            <td>+</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+            <td>=</td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>1</td><td>1</td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td>1</td><td></td><td></td><td></td>
+        </tr>
+    </table>
+    <h4>Step 6 - Same again for the next column.</h4>
+    <p>As it is 0 + 1, it will equal 1.</p>
+    <table id="webTable">
+        <tr>
+            <td></td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+        <tr>
+            <td>+</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+            <td>=</td><td></td><td></td><td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td>1</td><td></td><td></td><td></td>
+        </tr>
+    </table>
+    <h4>Step 7 - Repeat this again for the all of the columns remaining.</h4>
+    <table id="webTable">
+        <tr>
+            <td></td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+        <tr>
+            <td>+</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+            <td>=</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td>1</td><td></td><td></td><td></td>
+        </tr>
+    </table>
+    <h3>Answer: 01100101 + 10010110 = 11111011</h3> <!--Displays answer-->
+    <br>
+    <h3>Question 2: What is 11010011 + 10011101</h3> <!--Displays another question-->
+    <p>This question is much more challenging than the last so be prepared.</p>
+    <!--Step by step guide-->
+    <h4>Step 1 - Starting from the far right add each column individually.</h4>
+    <p>So 1 + 1 = 0 carry 1.</p>
+    <table id="webTable"> <!--Creates table-->
+        <tr>
+            <td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td> <!--Table contents-->
+        </tr>
+        <tr>
+            <td>+</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+        <tr>
+            <td>=</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td></td>
+        </tr>
+    </table>
+    <h4>Step 2 - Move to the mext column and add up all values.</h4>
+    <p>So 1 + 0 + 1 = 0 carry 1.</p>
+    <table id="webTable">
+        <tr>
+            <td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td>
+        </tr>
+        <tr>
+            <td>+</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+        <tr>
+            <td>=</td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td></td>
+        </tr>
+    </table>
+    <h4>Step 3 - Repeat step 2.</h4>
+    <p>So 0 + 1 + 1 = 0 carry 1.</p>
+    <table id="webTable">
+        <tr>
+            <td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td>
+        </tr>
+        <tr>
+            <td>+</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+        <tr>
+            <td>=</td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td><td>0</td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>1</td><td></td>
+        </tr>
+    </table>
+    <h4>Step 4 - Repeat that again.</h4>
+    <p>So 0 + 1 + 1 = 0 carry 1.</p>
+    <table id="webTable">
+        <tr>
+            <td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td>
+        </tr>
+        <tr>
+            <td>+</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+        <tr>
+            <td>=</td><td></td><td></td><td></td><td></td><td>0</td><td>0</td><td>0</td><td>0</td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>1</td><td>1</td><td></td>
+        </tr>
+    </table>
+    <h4>Step 5 - Move left and add up the column.</h4>
+    <p>So 1 + 1 + 1 = 1 carry 1.</p>
+    <table id="webTable">
+        <tr>
+            <td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td>
+        </tr>
+        <tr>
+            <td>+</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+        <tr>
+            <td>=</td><td></td><td></td><td></td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td></td>
+        </tr>
+    </table>
+    <h4>Step 6 - Same again for the next column.</h4>
+    <p>So 0 + 0 + 1 = 1 .</p>
+    <table id="webTable">
+        <tr>
+            <td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td>
+        </tr>
+        <tr>
+            <td>+</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+        <tr>
+            <td>=</td><td></td><td></td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td></td>
+        </tr>
+    </table>
+    <h4>Step 7 - Repeat this again.</h4>
+    <p>So 1 + 0 = 1 .</p>
+    <table id="webTable">
+        <tr>
+            <td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td>
+        </tr>
+        <tr>
+            <td>+</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+        <tr>
+            <td>=</td><td></td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td></td>
+        </tr>
+    </table>
+    <h4>Step 8 - Repeat this again.</h4>
+    <p>So 1 + 0 = 1 .</p>
+    <table id="webTable">
+        <tr>
+            <td></td><td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td>
+        </tr>
+        <tr>
+            <td>+</td><td></td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+        <tr>
+            <td>=</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td>
+        </tr>
+        <tr>
+            <td></td><td>1</td><td></td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td></td><td></td>
+        </tr>
+    </table>
+    <!--Explains the issue  with the answer-->
+    <p class="margins">So here we now face an issue as our answer was 9 bits however both of our inputs were only 8 bits, 
+        this means that our value doesn't fit into the range of numbers that can be represented by 8 bits.
+        This will cause an overflow error on our devices and it will not be able to store our answer.
+    </p>
+    <h3>Answer: Overflow error!</h3>
+    <p>Watch this video to get a better understanding of this process and of overflow errors.</p>
+    <!--Link to YouTube channel-->
+    <p><i>Credit to <a href="https://www.youtube.com/channel/UCkrWyWFoQTdjiFstqmycH9w" target="_blank">Mr Dimmick's Computing Channel</a></i></p>
+    <!--Displays video-->
+    <iframe class="vidSpacing" width="560" height="315" src="https://www.youtube.com/embed/nKxjLM6ePcI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p><a href="#TOPBA">Back to top</a></p> <!--sends user to top of screen where ID was created-->
+</div>
+</body>
+</html>
+
+    {% endblock %}

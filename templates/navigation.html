@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='website.css')}}"> <!--calls the stylesheet-->
+</head>
+<body>
+  
+  <div class="navbar"> <!--makes use of the navbar class from the stylesheet-->
+    <a href="/home">Home</a> <!--creates a home tab on the navbar-->
+    <div class="dropdown"> <!--makes use of the dropdown class from the stylesheet-->
+      <button class="dropbtn" onclick="dropFunction()">Learn</button> <!--uses the dropbtn class and the onclick function created for the dropdown tab learn-->
+      <div class="dropdown-content" id="myDropdown"> <!--defines teh class and id used for the dropdown tabs-->
+        <a href="/introduction">Introduction</a> <!--creates a dropdown tab-->
+        <a href="/binary-and-denary">Binary and Denary</a>
+        <a href="/binary-and-hex">Binary and Hex</a>
+        <a href="/denary-and-hex">Hex and Denary</a>
+        <a href="/binary-addition">Binary Addition</a>
+        <a href="/binary-shift">Binary Shifts</a>
+      </div>
+    </div>
+    <a href="/quiz-choice">Test</a> <!--creates a test tab on the navbar-->
+    <div class="navbar-right"> <!--makes use of the navbar-right class in the stylesheet-->
+      <a href="/welcome">Logout</a> <!--Links the login url path to a button-->
+    </div>
+  </div>
+
+<script>
+  /* When the user clicks on the button toggle between hiding and showing the dropdown content */
+  function dropFunction() { /* defines the function*/
+    document.getElementById("myDropdown").classList.toggle("show"); /* allows the dropdown to be shown */
+  }
+  
+  /* Close the dropdown if the user clicks outside of it */
+  window.onclick = function(e) {
+    if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+    }
+  }
+  </script>
+      {% block content %}
+      {% endblock %}
+</body>
+</html>

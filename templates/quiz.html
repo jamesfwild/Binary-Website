@@ -1,0 +1,98 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='website.css')}}"> <!--calls the stylesheet-->
+  <title> Quiz </title>
+</head>
+
+<body>
+<script>
+  //code used to prevent users from using the back button
+  function preventBack() {
+    window.history.forward();
+  }
+  setTimeout("preventBack()", 0);
+  window.onunload=function() {null};
+</script>
+
+<!--creates an empty navbar-->
+<div class="navbar">
+  <ul class="navbar">
+    <li class="navbar"></li>
+  </ul>
+</div>
+
+<div class="welcomeCover">
+  {% if buttons=="abled" %} <!--checks if buttons are abled-->
+    <progress max="30" value="30" class="progressBar" id="progress"></progress> <!--creates a progress bar lasting 30 seconds-->
+  {% endif %}  
+  {% if result==True %} <!--checks if user got correct answer-->
+    <div class="correct">
+      <audio autoplay>
+        <source src="{{ url_for('static', filename='correct.mp3')}}" type="audio/mpeg"> <!--plays audio-->
+        Your browser does not support the audio element.
+      </audio>
+      <p>Correct! Well done.</p>
+    </div>
+    <form action="/quiz" method="POST">
+      <button class="nextButton" name="next" value="next">Next</button> <!--creates a button to move on to next question-->
+    </form> 
+    {% elif result==False %}
+    <div class="incorrect">
+      <audio autoplay>
+        <source src="{{ url_for('static', filename='wrong.mp3')}}" type="audio/mpeg"> <!--plays audio-->
+        Your browser does not support the audio element.
+      </audio>
+      <p>Incorrect!</p>
+      <p>Correct Answer: {{correct}}</p> <!--displays correct answer-->
+    </div>
+    <form action="/quiz" method="POST">
+      <button class="nextButton" name="next" value="next">Next</button> <!--displays a next button to go onto the next question-->
+    </form> 
+  {% endif %}
+  <div class="question">
+      <h2>{{chosenQ}}</h2> <!--displays question-->
+  </div>
+
+  {% if questionType == 1 %} <!--checks if the question is multiple choice-->
+  <form name="myForm" action="/answer" method="POST">
+    <div class="columnAns">
+      <button class="answerButton" name="UserAns" value="UserAns1" {{buttons}}>{{Ans1}}</button> <!--displays an answer for a multiple choice question-->
+      <button class="answerButton" name="UserAns" value="UserAns2" {{buttons}}>{{Ans2}}</button>
+      <button class="answerButton" name="UserAns" value="UserAns3" {{buttons}}>{{Ans3}}</button>
+      <button class="answerButton" name="UserAns" value="UserAns4" {{buttons}}>{{Ans4}}</button>
+      <input type="submit" class="hide" id="Submit" name="UserAns" value="Submit" {{buttons}}> <!--displays hidden submit button in case timer runs out-->
+    </div>
+  </form>
+  
+  {% else %}
+  <div class="answerBox">  <!--makes use of form class from stylesheet-->
+    <form name="myForm" action="/answer" method="POST"> <!--when the user submit their inputs they will be taken to the logResult page-->
+      <input type="text" id="TypeAns" name="TypeAns" placeholder="Answer here" autocomplete="off" {{buttons}}> <!--defines what type of variable will be inputted along with the id,name, placeholder and value-->
+      <input type="submit" id="Submit" value="Submit" name="UserAns" {{buttons}}> <!--creates a submit button-->
+    </form>
+  </div> 
+  {% endif %}
+
+</div>
+<script>
+  //used for the 30 second timer
+  const progress=document.getElementById("progress"); //gets the time value
+  let timerCounter=progress.max;
+
+  const interval = setInterval(() => {
+    if (timerCounter <= 1) {
+      window.location.href="/answer"; //redirects the user to the answer page
+      clearInterval(interval);
+      document.getElementById("Submit").click();
+    }
+
+    timerCounter=timerCounter-1; //takes 1 of the time
+    progress.value=timerCounter;
+  },1000);
+</script>
+</body>
+</html>
+
+{% endblock %}

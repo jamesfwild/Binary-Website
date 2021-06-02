@@ -1,0 +1,28 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='website.css')}}"> <!--calls the stylesheet-->
+</head>
+<body>
+  
+  <div class="navbar"> <!--makes use of the navbar class from the stylesheet-->
+    <a href="/admin">Explore</a> <!--creates a explore tab on the navbar-->
+    <div class="navbar-right"> <!--makes use of the navbar-right class in the stylesheet-->
+      <a href="/welcome">Logout</a> <!--Links the login url path to a button-->
+    </div>
+  </div>
+ 
+    <title> Thank You </title>
+</head>
+
+<body>
+<div class=welcomeCover>
+    <h1>Welcome Admin</h1>
+    <p>Click explore to see the records of your students</p>
+    <br>
+</div>
+</body>
+</html>
+
+{% endblock %}

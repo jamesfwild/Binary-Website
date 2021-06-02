@@ -1,0 +1,234 @@
+{% extends "navigation.html" %} <!--Pulls through navigation bar so can be displayed on screen-->
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Learn </title>
+</head>
+<body>
+<div class="welcomeCover"> <!--Applies welcomeCover class from css-->
+    <h1 id="TOPBD">Converting Between Binary and Denary</h1> <!--creates a header with an ID so that I can create a link to send them to this point-->
+    <p><a href="#BTD">Click here</a> if you want to learn about converting binary to denary</p> <!--Moves the user down the page to the corresponding topic-->
+    <h2>Converting Denary to Binary</h2> <!--Introducing the topic-->
+    <p>Here you will learn how to convert denary to binary through a step by step guide using an example.</p>
+    <h3>Question: Convert 143 into Binary.</h3> <!--Create an example for the students to follow-->
+    <!--Step by step guide on how to answer a question-->
+    <h4>Step 1 - Write out the first 8 binary place values</h4>
+    <table id="webTable"> <!--Creates table to display my example and uses webTable class from css-->
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th><!--Table headers-->
+        </tr>
+    </table> <!--Closes table-->
+    <h4>Step 2 - Starting from the largest place value and see whether it can be subtracted from your value.</h4>
+    <p>So can 128 be taken away from 143? 143-128 = 15. Yes, therefore we shall put a 1 in the 128 column.</p> <!--Explaining the steps-->
+    <table id="webTable"><!--Creates table for example-->
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td> <!--Table contents-->
+        </tr>
+    </table>
+    <h4>Step 3 - Repeat step 2 for 64.</h4>
+    <p>So can 64 be taken from 15? 15-64 won't work. So now we put a 0 in the 64 column.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>0</td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+    </table>
+    <h4>Step 4 - Repeat step 2 again for 32.</h4>
+    <p>So can 32 be taken from 15? 15-32 won't work. Therefore, put a 0 in the 32 column.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+    </table>
+    <h4>Step 5 - Then again for 16.</h4>
+    <p>So can 16 be taken from 15? 15-16 again won't work. Therefore, put a 0 in the 16 place value column.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>0</td><td>0</td><td>0</td><td></td><td></td><td></td><td></td>
+        </tr>
+    </table>
+    <h4>Step 6 - Try again for 8.</h4>
+    <p>So can 8 be taken from 15? 15-8=7. Yes! Therefore, put a 1 in the 8 column.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td></td><td></td><td></td>
+        </tr>
+    </table>
+    <h4>Step 7 - Repeat again for 4.</h4>
+    <p>So can 4 be taken from 7? 7-4=3. So therefore, we put a 1 in the 4 column.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td></td><td></td>
+        </tr>
+    </table>
+    <h4>Step 8 - Repeat for place holder 2.</h4>
+    <p>Can 2 be taken from 3? 3-2=1. Yes, so we put a 1 in the 2 column.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td></td>
+        </tr>
+    </table>
+    <h4>Step 9 - Finally, repeat for 1.</h4>
+    <p>So can 1 be taken from 1? 1-1=0. Therefore, add a 1 in the 1 place value column.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+    </table>
+    <h3>Answer: 143 = 10001111</h3>  <!--Displays answer-->
+    <p>The video below may help you to understand this better.</p>
+    <!--Links to their YouTube channel on another tab-->
+    <p><i>Credit to <a href="https://www.youtube.com/channel/UCip6WVVodn3tFp9X-vxJV6Q" target="_blank">Tom Benyon</a></i></p> 
+    <!--Displays a video for the students to watch-->
+    <iframe class="vidSpacing" width="560" height="315" src="https://www.youtube.com/embed/70lM1qAD5u4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h2 id="BTD">Converting Binary to Denary</h2> <!--Creates header with ID so can be referenced in a link-->
+    <h3>Question: Convert 11010010 into Binary.</h3> <!--Asks user question-->
+    <h4>Step 1 - Write out the first 8 binary place values along with the corresponding binary value.</h4> <!--Guides user through process-->
+    <table id="webTable"> <!--Creates table-->
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th> <!--Table headers-->
+        </tr>
+        <tr>
+         <td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td> <!--Table contents-->
+        </tr>
+    </table> <!--Closes table-->
+    <h4>Step 2 - Starting from the largest place value look to see whether it has a value of 1 or 0.</h4>
+    <p>As our first value is 1 add that to the total.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+         <td>128+</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+    </table>
+    <h4>Step 3 - Repeat step 2 for 64.</h4>
+    <p>As this value is 1 add 64 to the total.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+         <td>128+</td><td>64+</td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+    </table>
+    <h4>Step 4 - Repeat this again for 32.</h4>
+    <p>This value is 0 so do not add it to the total.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+         <td>128+</td><td>64+</td><td>0+</td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+    </table>
+    <h4>Step 5 - Then again for 16.</h4>
+    <p>This has a value of 1 so add this to the total.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+         <td>128+</td><td>64+</td><td>0+</td><td>16+</td><td></td><td></td><td></td><td></td>
+        </tr>
+    </table>
+    <h4>Step 6 - Try again for 8.</h4>
+    <p>As this has a value of 0 do not add it.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+         <td>128+</td><td>64+</td><td>0+</td><td>16+</td><td>0+</td><td></td><td></td><td></td>
+        </tr>
+    </table>
+    <h4>Step 7 - Repeat again for 4.</h4>
+    <p>This has a value if 0 so do not add it.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+         <td>128+</td><td>64+</td><td>0+</td><td>16+</td><td>0+</td><td>0+</td><td></td><td></td>
+        </tr>
+    </table>
+    <h4>Step 8 - Repeat for place holder 2.</h4>
+    <p>This has a value of 1 so add it to the total.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+         <td>128+</td><td>64+</td><td>0+</td><td>16+</td><td>0+</td><td>0+</td><td>2+</td><td></td>
+        </tr>
+    </table>
+    <h4>Step 9 - Finally, repeat for 1.</h4>
+    <p>As this is 0 do not add it.</p>
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+         <td>128+</td><td>64+</td><td>0+</td><td>16+</td><td>0+</td><td>0+</td><td>2+</td><td>0</td>
+        </tr>
+    </table>
+    <h3>Answer: 11010010 = 210</h3> <!--Displays answer for user-->
+    <p>The video below may help you to understand this better.</p>
+    <!--Link to the YouTube channel-->
+    <p><i>Credit to <a href="https://www.youtube.com/channel/UCip6WVVodn3tFp9X-vxJV6Q" target="_blank">Tom Benyon</a></i></p>
+    <!--Displays YouTube video-->
+    <iframe class="vidSpacing" width="560" height="315" src="https://www.youtube.com/embed/q7nZbAUTSC4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!--User can click link to send them to the top of the page-->
+    <p><a href="#TOPBD">Back to top</a></p>
+</div> <!--Closes div-->
+</body>
+</html>
+{% endblock %}

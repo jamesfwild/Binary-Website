@@ -1,0 +1,138 @@
+{% extends "navigation.html" %} <!--Pulls through navigation bar to be displayed on screen-->
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Learn </title>
+</head> 
+<body>
+<div class="welcomeCover"> <!--Applies welcomeCover class from css-->
+    <h1 id="TOPHD">Converting Between Denary and Hexadecimal</h1> <!--Header with ID so it can be referenced-->
+    <p><a href="#DTH">Click here</a> if you want to learn about converting Denary to Hexadecimal.</p> <!--Creates link using ID created later-->
+    <h2>Converting Hexadecimal to Denary</h2>
+    <p>Before using this page ensure that you are comfortable with converting hex to binary and binary to denary!</p>
+    <p>Here you will learn how to convert hexadecimal to denary through a step by step guide using an example.</p>
+    <h3>Question: Convert D6 into Denary.</h3> <!--Displays question to be used as a guide-->
+    <h4>Step 1 - Convert any letters into numbers</h4>
+    <p>To do this we can use the table below</p>
+    <table id="webTable"> <!--Creates table-->
+        <tr>
+         <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th> <!--Table headers-->
+        </tr>
+        <tr>
+         <td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td> <!--Table contents-->
+        </tr>
+    </table>
+    <p>So now we are left with 13 6.</p>
+    <h4>Step 2 - Split the hex into 2 and write out the first 4 place values for each.</h4>
+    <h4>Step 3 - Convert each of these values into binary.</h4>
+    <p>Converting 13 into binary</p>
+    <table id="webTable">
+        <tr>
+         <th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+            <td>1</td><td>1</td><td>0</td><td>1</td>
+        </tr>
+    </table>
+    <p>Converting 6 into binary</p>
+    <table id="webTable">
+        <tr>
+         <th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+            <td>0</td><td>1</td><td>1</td><td>0</td>
+        </tr>
+    </table>
+    <h4>Step 4 - Combine these values to get an 8 bit binary string</h4> 
+    <h4>Step 5 - Write out the first 8 place values</h4> 
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td>
+        </tr>
+    </table>
+    <h4>Step 6 - Convert this into denary</h4>    
+    <table id="webTable">
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+         <td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+         <td>128+</td><td>64+</td><td>0+</td><td>16+</td><td>0+</td><td>4+</td><td>2+</td><td>0</td>
+        </tr>
+    </table> 
+    <h3>Answer: D6 = 214</h3>  <!--Displays answer for users-->
+    <p>If this was not clear please revisit converting hex to binary and binary to denary.</p>
+    <p>Watch this video to gain a better understanding of this process.</p>
+    <!--Creates link to the YouTube channel-->
+    <p><i>Credit to <a href="https://www.youtube.com/channel/UCip6WVVodn3tFp9X-vxJV6Q" target="_blank">Tom Benyon</a></i></p>
+    <!--Displays video to help students revise-->
+    <iframe class="vidSpacing" width="560" height="315" src="https://www.youtube.com/embed/bjpMvXd1TTQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+
+    <h2 id="DTH">Converting Denary to Hexadecimal</h2> <!--Creates ID to be referenced in links-->
+    <p>Before using this page ensure that you are comfortable with converting denary to binary and binary to hex!</p>
+    <h3>Question: Convert 124 into hexadecimal.</h3> <!--Questions used for guide-->
+    <h4>Step 1 - Write out the first 8 place values.</h4>   
+    <h4>Step 2 - Convert this into binary</h4> 
+    <table id="webTable"> <!--Creates table-->
+        <tr>
+         <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th> <!--Table headers-->
+        </tr>
+        <tr>
+         <td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td> <!--Table contents-->
+        </tr>
+    </table>
+    <h4>Step 3 - Split this in half and convert each section into hexadecimal</h4>
+    <table id="webTable">
+        <tr>
+         <th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+            <td>0</td><td>1</td><td>1</td><td>1</td>
+        </tr>
+        <tr>
+            <td>0+</td><td>4+</td><td>2+</td><td>1</td>
+        </tr>
+    </table>
+    <p>Adding these up you should get 7</p>
+    <br>
+    <table id="webTable">
+        <tr>
+         <th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr>
+            <td>1</td><td>1</td><td>0</td><td>0</td>
+        </tr>
+        <tr>
+            <td>8+</td><td>4+</td><td>0+</td><td>0</td>
+        </tr>
+    </table>
+    <p>From adding these up you should get 12 which according to the table below is equal to C.</p>
+    <table id="webTable">
+        <tr>
+         <th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th>
+        </tr>
+        <tr>
+         <td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td>
+        </tr>
+    </table>
+    <h4>Step 4 - Combine these values to get your answer.</h4>
+    <h3>Answer: 124 = 7C</h3> <!--Displays answer-->
+    <p>If this was not clear please revisit converting denary to binary and binary to hex.</p>
+    <p>Also, watch this video to get a better grasp of this process.</p>
+    <!--Link to YouTube channel-->
+    <p><i>Credit to <a href="https://www.youtube.com/channel/UCip6WVVodn3tFp9X-vxJV6Q" target="_blank">Tom Benyon</a></i></p>
+    <!--Displays video-->
+    <iframe class="vidSpacing" width="560" height="315" src="https://www.youtube.com/embed/NTiBqXm9u8Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p><a href="#TOPHD">Back to top</a></p>
+</div>
+</body>
+</html>
+{% endblock %}
+
+    

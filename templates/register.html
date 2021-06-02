@@ -1,0 +1,37 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='website.css')}}"> <!--calls the stylesheet-->
+  <title> Register </title>
+</head>
+
+
+<body>
+<!--creates an empty navbar-->
+<div class="navbar">
+  <ul class="navbar">
+    <li class="navbar"></li>
+  </ul>
+</div>
+
+<div class="forms"> <!--uses the forms class from the stylesheet-->
+  <form action="/regResult" method="POST"> <!--when the user clicks submit it will post them through to the regResult url path-->
+    <label for="Username">Username</label> <!--outputs Username-->
+    <input type="text" id="Username" name="Username" placeholder="Username" value="{{username}}"> <!--defines what type of variable will be inputted along with the id,name, placeholder and value.-->
+
+    <label for="Email">Email</label>
+    <input type="Email" id="Email" name="Email" placeholder="Email" value="{{email}}">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Password" value="{{password}}">
+
+    <label for="passwordVal">Validate Password</label>
+    <input type="password" id="passwordVal" name="passwordVal" placeholder="Re-enter Password" value="{{passwordVal}}">
+    {{error_statement}} <!--outputs an error statement if one occurs-->
+    <input type="submit" value="Submit"> <!--creates a submit button-->
+  </form>
+</div>
+</body>
+</html>
+{% endblock %}

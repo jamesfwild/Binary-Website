@@ -1,0 +1,44 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='website.css')}}"> <!--calls the stylesheet-->
+    <title> Admin </title>
+</head>
+<body>
+<div class="navbar">
+    <div class="navbar-right">
+        <a href="/welcome">Logout</a> <!--Links the login url path to a button-->
+    </div>
+</div>
+
+<div class="welcomeCover"> <!--Applies welcomeCover class from my css-->
+    <h2>Student Records</h2>
+    <table id="leaderTable"> <!--creates a table to display the leaderboard-->
+        <tr>
+            <th>Name</th><th>Login Count</th><th>Total Score</th><th>Questions Answered</th><th>Last Login</th> <!--displays the headings for the report-->
+        </tr>
+        {% for i in userlist %} <!--uses for loop to iterate through userlist-->
+            <tr>
+                <td>{{i[1]}}</td><td>{{i[5]}}</td><td>{{i[6]}}</td><td>{{i[7]}}</td><td>{{i[4]}}</td> <!--displays name, login count, total score, questions answers and last login-->
+            </tr>
+        {% endfor %} <!--ends the for loop-->
+    </table>
+    <form>
+        <button onclick="clearFunction()" class="nextButton">Clear</button> <!--displays a clear button-->
+    </form> 
+</div>
+
+<script>
+function clearFunction() { //function called onclick of clear button
+    var r = confirm("Are you sure you want to delete all accounts?"); //creates a variable which stores the value inputted from the confirm alert
+    if (r == true) { //checks if user inputes OK into confirm alert
+		location.href = "/clear"; //redirects the url to the clear page
+    }
+	alert("You pressed: " + r); //displays alert with users input
+}
+</script>
+</body>
+</html>
+
+{% endblock %}

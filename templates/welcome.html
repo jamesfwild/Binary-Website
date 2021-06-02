@@ -1,0 +1,29 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='website.css')}}"> <!--calls the stylesheet-->
+  <title> Welcome </title>
+</head>
+<body>
+<div class="navbar"> <!--makes use of the navbar class in the stylesheet-->
+  <div class="navbar-right"> <!--makes use of the navbar-right class in the stylesheet-->
+    <a href="/about">About</a> <!--Links the about url path to a button-->
+    <a href="/login">Login</a> <!--Links the login url path to a button-->
+  </div>
+</div>
+
+<div class="img">
+  <img src="{{url_for('static', filename='CSPhoto.png')}}" /> <!--displays the image from the static file-->
+</div>
+   
+<div class="banner"> <!--applies the banner class to text-->
+  <div class="app-text">
+      <h1>Welcome to CS</h1>
+      <p>Here is the hub for all of your binary, hex <br>and denary revision,
+          where we can help to <br> resolve any issues you are having with the<br> topic and assist you to unlock higher grades <br>in your GCSE's.</p>
+  </div>
+</div>
+</body>
+</html>
+{% endblock %}

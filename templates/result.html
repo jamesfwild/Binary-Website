@@ -1,0 +1,32 @@
+{% extends "navigation.html" %} <!--Extends the navigation bar so will be displayed on screen-->
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Result </title>
+</head>
+<body>
+
+<script>
+    //code used to prevent users from using the back button
+    function preventBack() {
+        window.history.forward();
+    }
+    setTimeout("preventBack()", 0);
+    window.onunload=function() {null};
+</script>
+
+<div class="welcomeCover">
+    <p>You scored:</p>
+    <h2>{{total}}</h2> <!--prints the user score from the test-->
+    <h3>/10</h3>
+
+    {% if total > 7 %} <!--checks if the score is greater than 7-->
+    <h4>Well done.</h4>
+    {% elif total > 4 and total < 8 %} <!--checks if the score is greater than 4 and less than 8-->
+    <h4>Good Try. Better luck next time.</h4>
+    {% else %}
+    <h4>Please revisit our learning pages to get a better understanding.</h4>
+    {% endif %}
+</div>
+{% endblock %}
